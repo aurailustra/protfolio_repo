@@ -1,0 +1,113 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: black;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+/* Container principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: black;
+    color: white;
+
+    nav {
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            font-family: "Noto Sans", sans-serif;
+            margin-left: 10px;
+            padding: 10px;
+            border: none;
+            background: white;
+            color: black;
+            cursor: pointer;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background: #f0f0f0;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+/* Grid de Projetos */
+.projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Cards dos projetos */
+.card {
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+
+    .titulo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow:
+            3px 5px 3px black,
+            -1px -1px 0px black,
+            1px -1px 0px black,
+            3px 3px 0px black;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.6);
+        border-radius: 8px;
+        border: 3px solid white;
+
+        .titulo {
+            opacity: 1;
+            color: white;
+        }
+    }
+}
+
+.contato {
+    text-align: center;
+}

@@ -1,0 +1,330 @@
+/* Reset básico */
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o padding padrão de todos os elementos */
+    box-sizing: border-box; /* Faz com que padding e borda sejam incluídos no tamanho total do elemento */
+    font-family: Arial, sans-serif; /* Define a fonte padrão para a página */
+}
+
+body {
+    background: rgb(0, 0, 0); /* Define o fundo do corpo como branco */
+    color: black; /* Define a cor do texto como preta */
+    justify-content: center; /* Alinha o conteúdo horizontalmente ao centro */
+    display: grid; /* Define o corpo como um grid (substitui o display: flex) */
+    width: 100%; /* Define a largura do body como 100% da tela */
+    align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+    justify-items: center; /* os itens horizontalmente (em relação à coluna)*/
+    grid-template-columns: auto; /* Cria uma única coluna de tamanho automático*/
+}
+
+/* Container principal */
+.container {
+    width: 100%; /* Define a largura da container como 100% da tela */
+    max-width: 1200px; /* Define a largura máxima da container como 1200px */
+    display: grid; /* Define a container como um grid */
+    grid-template-rows: auto 1fr auto; /* Define 3 linhas: a primeira e última de tamanho automático, a do meio ocupa o restante */
+    min-height: 100vh; /* Faz com que o contêiner tenha pelo menos a altura da tela */
+}
+
+/* Header */
+header {
+    display: flex; /* Define o header como um contêiner flexível */
+    justify-content: space-between; /* Espalha os itens dentro do header de forma que fiquem nos extremos */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    padding: 20px; /* Adiciona 20px de padding em torno do conteúdo do header */
+    background: black; /* Define o fundo do header como preto */
+    color: white; /* Define a cor do texto como branco */
+    width: 100%; /* Define a largura do header como 100% da tela */
+    max-width: 800px; /* Define a largura máxima do header como 800px */
+    margin: 0 auto; /* Centraliza o header horizontalmente */
+    /* Centraliza o header no meio da tela */
+    nav {
+        a {
+            text-decoration: none; /* Remove o sublinhado dos links no menu de navegação */
+        }
+
+        button {
+            font-family: "Noto Sans", sans-serif; /* Define a fonte do botão */
+            margin-left: 10px; /* Adiciona 10px de margem à esquerda do botão */
+            padding: 10px; /* Adiciona 10px de padding dentro do botão */
+            border: none; /* Remove a borda do botão */
+            background: white; /* Define o fundo do botão como branco */
+            color: black; /* Define a cor do texto do botão como preto */
+            cursor: pointer; /* Adiciona o cursor de mãozinha ao passar o mouse sobre o botão */
+            transition: background 0.3s ease; /* Define uma transição suave de 0.3 segundos para a mudança de fundo */
+            
+            &:hover {
+                background: #f0f0f0; /* Muda o fundo para cinza claro quando o botão é hovered */
+                border-radius: 10px; /* Adiciona bordas arredondadas ao botão */
+            }
+        }
+    }
+}
+
+/* linha */
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: black;
+    color: white;
+    width: 100%;
+    height: 5px;
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o header */
+}
+
+/* Adicionar uma linha abaixo do header */
+.line::after {
+    content: ""; /* Necessário para criar o pseudo-elemento */
+    display: block; /* Faz com que o pseudo-elemento seja exibido como um bloco */
+    width: 100%; /* A linha ocupa toda a largura do header */
+    height: 1px; /* Altura da linha */
+    background-color: #ccc; /* Cor da linha */
+    margin-top: 10px; /* Espaçamento entre o header e a linha */
+}
+
+h1 {
+    grid-column: span 2; /* Faz a imagem ocupar 2 colunas no grid */
+    color: #f0f0f0;
+}
+p {
+    grid-column: span 2; /* Faz a imagem ocupar 2 colunas no grid */
+    color: #f0f0f0;
+}
+
+/* Grid de Projetos */
+.projetos {
+    display: grid; /* Define a seção de projetos como um grid */
+    width: 100%; /* Define a largura do contêiner de projetos como 100% */
+    align-items: center; /* Alinha os itens dentro do grid verticalmente ao centro */
+    grid-template-columns: 400px 400px; /* Define 2 colunas de 400px de largura */
+    gap: 20px; /* Adiciona 20px de espaçamento entre os itens do grid */
+    padding: 20px; /* Adiciona 20px de padding em torno da seção de projetos */
+    text-align: center; /* Alinha o texto no centro */
+    justify-items: center; /* Centraliza os itens dentro das colunas */
+}
+
+
+/* Caixa preta para a imagem grande */
+.imagem-grande {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    max-width: 800px; /* Define a largura máxima da imagem como 800px */
+    height: 400px; /* Define uma altura fixa de 400px para a imagem */
+    background: rgb(255, 255, 255); /* Define o fundo da imagem como preto */
+    display: grid;
+    /*display: flex; /* Define a imagem como um contêiner flexível */
+    align-items: center; /* Alinha o conteúdo dentro da imagem verticalmente ao centro */
+    justify-content: center; /* Alinha o conteúdo dentro da imagem horizontalmente ao centro */
+    border-radius: 8px; /* Adiciona bordas arredondadas à imagem */
+    grid-column: span 2; /* Faz a imagem ocupar 2 colunas no grid */
+}
+
+.videoyt {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    max-width: 800px; /* Define a largura máxima da imagem como 800px */
+    height: 400px; /* Define uma altura fixa de 400px para a imagem */
+    background: rgb(255, 255, 255); /* Define o fundo da imagem como preto */
+    display: grid;
+    /*display: flex; /* Define a imagem como um contêiner flexível */
+    align-items: center; /* Alinha o conteúdo dentro da imagem verticalmente ao centro */
+    justify-content: center; /* Alinha o conteúdo dentro da imagem horizontalmente ao centro */
+    border-radius: 8px; /* Adiciona bordas arredondadas à imagem */
+    grid-column: span 2; /* Faz a imagem ocupar 2 colunas no grid */
+}
+
+iframe {
+    max-width: 100%;
+}
+
+/* Estilo para a imagem dentro da caixa preta */
+.imagem-grande img {
+    align-items: center; /* Alinha a imagem verticalmente no centro */
+    max-width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    height: 400px; /* Define a altura da imagem como 400px */
+    border-radius: 8px; /* Adiciona bordas arredondadas à imagem */
+}
+
+/* Contêiner das duas imagens lado a lado */
+.imagens-lado-a-lado {
+    display: grid; /* Define o contêiner das imagens lado a lado como um grid */
+    padding: 10px;
+    grid-template-columns: 250px 250px 250px; /* Define 3 colunas de 250px de largura para 2 colunas usar 390px */
+    gap: 20px; /* Adiciona 15px de espaçamento entre as imagens */
+    width: 100%; /* Define a largura do contêiner como 100% */
+    max-width: 400px; /* Define a largura máxima da imagem como 800px */
+    justify-items: center; /* Centraliza as imagens dentro das colunas */
+}
+
+/* Caixa preta para as imagens menores */
+.imagens-lado-a-lado .imagem {
+    width: 100%; /* Faz a caixa da imagem ocupar toda a largura disponível */
+    height: 250px; /* Define a altura fixa da caixa da imagem como 250px */
+    background: rgb(255, 255, 255); /* Define o fundo da caixa como preto */
+    display: grid; /* Define o corpo como um grid (substitui o display: flex) */
+    /*display: flex; /* Define a caixa da imagem como um contêiner flexível */
+    align-items: center; /* Alinha a imagem verticalmente ao centro */
+    justify-content: center; /* Alinha a imagem horizontalmente ao centro */
+    border-radius: 8px; /* Adiciona bordas arredondadas à caixa da imagem */
+}
+
+/* Estilo para a imagem dentro da caixa preta */
+.imagens-lado-a-lado .imagem img {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível dentro da caixa */
+    height: auto; /* Ajusta a altura da imagem automaticamente para manter a proporção */
+    border-radius: 8px; /* Adiciona bordas arredondadas à imagem */
+    display: block; /* Garante que a imagem seja exibida como um bloco */
+}
+
+/* Caixa preta para a imagem grande */
+.imagem-grande2 {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    max-width: 800px; /* Define a largura máxima da imagem como 800px */
+    max-height: 300px; /* Define uma altura fixa de 400px para a imagem */
+    background: rgb(255, 255, 255); /* Define o fundo da imagem como preto */
+    display: grid;
+    /*display: flex; /* Define a imagem como um contêiner flexível */
+    align-items: center; /* Alinha o conteúdo dentro da imagem verticalmente ao centro */
+    justify-content: center; /* Alinha o conteúdo dentro da imagem horizontalmente ao centro */
+    border-radius: 8px; /* Adiciona bordas arredondadas à imagem */
+    grid-column: span 2; /* Faz a imagem ocupar 2 colunas no grid */
+}
+
+/* Estilo para a imagem dentro da caixa preta */
+.imagem-grande2 img {
+    align-items: center; /* Alinha a imagem verticalmente no centro */
+    border-radius: 8px; /* Adiciona bordas arredondadas à imagem */
+    max-width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    max-height: 100% /* Define a altura da imagem como 400px */
+}
+
+.imagens-lado-a-lado2 {
+    display: grid; /* Define o contêiner das imagens lado a lado como um grid */
+    padding: 10px;
+    grid-template-columns: 390px 390px; /* Define 3 colunas de 250px de largura para 2 colunas usar 390px */
+    gap: 20px; /* Adiciona 15px de espaçamento entre as imagens */
+    width: 100%; /* Define a largura do contêiner como 100% */
+    max-width: 400px; /* Define a largura máxima da imagem como 800px */
+    justify-items: center; /* Centraliza as imagens dentro das colunas */
+}
+
+
+/* Estilo para a imagem dentro da caixa preta */
+.imagens-lado-a-lado2 .imagem img {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível dentro da caixa */
+    height: auto; /* Ajusta a altura da imagem automaticamente para manter a proporção */
+    border-radius: 8px; /* Adiciona bordas arredondadas à imagem */
+    display: block; /* Garante que a imagem seja exibida como um bloco */
+}
+
+/* Estilo para a seção de contato */
+.contato {
+    text-align: center; /* Centraliza o texto na seção de contato */
+}
+
+.activity-box {
+  grid-column: span 2;
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 1.5em;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: #ffffff;
+}
+
+.activity-title {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.activities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em 2em;
+}
+
+.activity-option {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 0.5em;
+  object-fit: contain;
+}
+
+
+/* RESPONSIVIDADE – Adapta o layout para telas menores */
+@media (max-width: 1024px) {
+    .projetos {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .activities {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas para o box de atividades */
+    }
+  
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+  
+    .projetos {
+      grid-template-columns: 1fr;
+    }
+  
+    .activities {
+      grid-template-columns: 1fr; /* Atividades em uma única coluna */
+    }
+
+
+  }
+/* Faz as imagens se adaptarem ao tamanho da tela */
+.imagem-grande img,
+.imagem-grande2 img,
+.imagens-lado-a-lado .imagem img,
+.imagens-lado-a-lado2 .imagem img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajustes extras para caixas de imagem */
+.imagem-grande,
+.imagem-grande2,
+.imagens-lado-a-lado .imagem,
+.imagens-lado-a-lado2 .imagem {
+  height: auto; /* Remove altura fixa */
+  max-height: none; /* Libera altura máxima */
+}
+
+
+/* Responsividade extra para telas muito pequenas */
+@media (max-width: 480px) {
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .imagem-grande,
+  .imagem-grande2 {
+    padding: 10px;
+  }
+
+  .activity-box {
+    padding: 1em;
+  }
+
+  .activity-option {
+    font-size: 0.95em;
+  }
+}
+  
